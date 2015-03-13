@@ -89,3 +89,23 @@ gulp.task('install', 'Runs npm and bower installs', function() {
 		.src(['./bower.json', './package.json'])
 		.pipe(install());
 });
+
+gulp.task('ngdocs', 'Builds documentation from jsdoc in js files', function () {
+    var gulpDocs = require('gulp-ngdocs');
+    var options = {
+        //options
+    };
+
+    return gulpDocs.sections({
+        api: {
+            glob:['src/**/*.js', '!src/**/*.spec.js'],
+            api: true,
+            title: 'API Documentation'
+        }
+        //,
+        //tutorial: {
+        //    glob: ['content/tutorial/*.ngdoc'],
+        //    title: 'Tutorial'
+        //}
+    }).pipe(gulpDocs.process(options)).pipe(gulp.dest('./dist/docs'));
+});

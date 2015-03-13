@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="sites/sandbox/lib/bower/angular/angular.min.js"></script>
+    <script src="src/directives/bossy.chart.js"></script>
+    <style type="text/css">
+    svg {
+        position: absolute;
+        transform: rotateX(180deg);
+        left: 0;
+    }
+
+    line  {
+        stroke:red;
+        stroke-width:3px;
+    }
+    </style>
+</head>
+<body ng-controller="BaseCtrl">
+
+    <bossy-chart type="line" config="lineConfig" data="lineData"></bossy-chart>
+
+</body>
+<script>
+
+    angular.module('bossy', ['bossy.chart'])
+
+        .controller('BaseCtrl', ['$scope', function ($scope) {
+
+            $scope.lineConfig = {
+                width: 200,
+                height: 400,
+                yLabel: 'Sales (in millions)',
+                xLabel: 'Year: 2014'
+            };
+
+            $scope.lineData = [
+                {
+                    label: 'January',
+                    value: 36
+                },
+                {
+                    label: 'February',
+                    value: 54
+                },
+                {
+                    label: 'March',
+                    value: 62
+                },
+                {
+                    label: 'April',
+                    value: 82
+                },
+                {
+                    label: 'May',
+                    value: 96
+                },
+                {
+                    label: 'June',
+                    value: 104
+                },
+                {
+                    label: 'July',
+                    value: 122
+                },
+                {
+                    label: 'August',
+                    value: 152
+                },
+                {
+                    label: 'September',
+                    value: 176
+                },
+                {
+                    label: 'October',
+                    value: 180
+                },
+                {
+                    label: 'November',
+                    value: 252
+                },
+                {
+                    label: 'December',
+                    value: 342
+                }
+            ];
+
+        }]);
+
+    angular.bootstrap(document, ['bossy', 'bossy.chart']);
+
+</script>
+</html>
+
+
