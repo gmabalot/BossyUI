@@ -4,7 +4,7 @@ author: Build Open Source Consortium
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Bossy UI is an opinionated set of Angular Directives
-baseurl: "/BossyUI/#" # the subpath of your site, e.g. /blog/
+baseurl: "/BossyUI" # the subpath of your site, e.g. /blog/
 url: "http://buildcom.github.io" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 # github_username:  jekyll
