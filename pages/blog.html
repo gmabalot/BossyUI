@@ -1,13 +1,32 @@
 ---
+layout: page
 title: Blog
-slug: blog
-order: 7
+permalink: blog/
+order: 1
 ---
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a ui-sref="blog({ post: '{{ post.url | prepend: site.baseurl }}' })">{{ post.title }}</a>
-      {{ post.excerpt }}
+
+<ja-paginator>
+  <ul class="unstyle grid-2 rows">
+    {% assign group = 1 %}
+    {% assign page = site.pagination %}
+    {% for post in site.posts %}
+      {% if forloop.index > page %}
+        {% assign group = group | plus: 1 %}
+        {% assign page = page | plus: site.pagination %}
+      {% endif %}
+      <li class="col" ng-show="current == {{group}}">
+        <a ui-sref="page({path: '{{post.url}}' })">{{post.title}}</a>
+  			<p>{{post.excerpt}}</p>
+      </li>
+      {% assign length = forloop.length%}
+    {% endfor %}
+  </ul>
+  <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
+  <ul class="unstyle">
+    <li ng-repeat="page in pageIndex({{group}})" class="col">
+      <button ng-class="{'is-current': current == page}" ng-click="pageTo(page)">[[page]]</button>
     </li>
-  {% endfor %}
-</ul>
+  </ul>
+  <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
+  <script ng-init="pagination = {{site.pagination}}; length = {{length}}; pageMax = {{group}}"></script>
+</ja-paginator>

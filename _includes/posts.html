@@ -1,0 +1,11 @@
+<script type="text/javascript">
+var posts = [
+{% for post in site.posts %}
+	{
+		"name": "{{post.title}}",
+		"url": "{{post.url}}",
+		"excerpt": "{{post.excerpt | truncatewords 10 | strip_html}}"
+	},
+{% endfor %}
+]
+</script>

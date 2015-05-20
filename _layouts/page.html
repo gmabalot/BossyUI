@@ -1,9 +1,9 @@
-<div class="container">
+---
+layout: container
+---	
 
-	  <h1 class="post-title">{{ page.title }}</h1>
+	{% if page.title %}
+		<h1 class="heading--l">{{ page.title }}</h1>
+	{% endif %}
 
-	  <article class="post-content">
-	    {{ content }}
-	  </article>
-
-</div>
+  {{ content }}

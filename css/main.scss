@@ -1,11 +1,15 @@
 ---
 ---
+@charset "UTF-8";
 
-@import "vars";
-@import "extends";
-@import "resets";
-@import "bourbon/bourbon";
-@import "grid";
-@import "syntax-highlighting";
-@import "navigation";
-@import "theme";
+@import "sass/vars";
+@import "vendor/thin-scss/dist/thin";
+@import "sass/typography";
+@import "sass/theme";
+
+@import "sass/syntax-highlighting";
+
+
+.is-current {
+	background: blue;
+}

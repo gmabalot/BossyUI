@@ -1,30 +1,22 @@
 <head>
-		{% assign lvl = page.url | append:'X' | split:'/' | size %}
-		{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{{ site.keywords | join: ',' }}">
+  <meta name="author" content="{{ site.author }}">
 
-    <script type="text/javascript">
-		  WebFontConfig = {
-		    google: { families: [ 'Lato:100,300,400,700:latin' ] }
-		  };
-		  (function() {
-		    var wf = document.createElement('script');
-		    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-		      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-		    wf.type = 'text/javascript';
-		    wf.async = 'true';
-		    var s = document.getElementsByTagName('script')[0];
-		    s.parentNode.insertBefore(wf, s);
-		  })();
-		</script>
+  <script type="text/javascript">
+    var base = "{{ site.baseurl }}";
+  </script>
 
-    <link rel="stylesheet" href="{{ relative }}css/main.css">
-    <link rel="stylesheet" href="{{ relative }}bower_components/BossyUI/dist/css/bossy.css">
-    <link rel="stylesheet" href="{{ relative }}bower_components/ionicons/css/ionicons.min.css">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" id="snipcart" src="https://app.snipcart.com/scripts/snipcart.js" data-api-key="NjEyMmVmNjktYWRhMi00ZjEyLThjYTctNzNiMTY4NTNjODA0"></script>
+  <link type="text/css" id="snipcart-theme" href="https://app.snipcart.com/themes/base/snipcart.css" rel="stylesheet" />
 </head>

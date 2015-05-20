@@ -1,203 +1,89 @@
-// Oxygen 300, 400, 700
-// Lato 400,700, I, B
-
-body {
-	font-family: $f-lato;
-	font-weight: 400;
-	font-size: 11pt;
-	padding-top: 40px;
-	background: url(../img/bg_mark.svg) no-repeat -400px -400px;
-	color: $c-value-a;
-}
-
-h1, h2, h3, h4, h5 {
-	font-family: $f-oxygen;
-	font-weight: 400;
-}
-
-section + * {
-	margin-top: $section-margin;
-}
-
-.logo-mark {
-	fill: $c-blue-a;
-}
-
-#bossy_logo_mark {
-	background-color: $c-green-a;
-}
-
-// a, a:visited {
-// 	color: $c-value-a;
-// }
-
-[role="main"] {
-	margin-top: $margin;
-	margin-bottom: $margin;
+#header {
+	background: $c-gray;
+	z-index: 1000;
 }
 
 #logo {
-	display: inline-block;
-	width: 30px;
-	margin: 0 auto;
-	padding-top: 4px;
-	text-align: center;
-}
-
-.table {
-	display: table;
-	width: 100%;
-	> * {
-		display: table-cell;
-	}
-}
-
-#header {
-	@include background(linear-gradient(to top, $c-blue-a, lighten($c-blue-a, 2)));
-	box-shadow: 0 1px 2px rgba(black, 0);
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 999;
-	position: fixed;
-	box-shadow: 0 1px 2px rgba(black, 0.4);
-
-	@include transition(box-shadow .25s);
+	color: #fff;
+	height: 3rem;
+	line-height: 3rem;
+	text-decoration: none;
 }
 
 #footer {
-	background-color: #5A5A5A;
-	color: #fff;
-	box-shadow: 0 2px 2px rgba(black, 0.2) inset;
-	padding: 0 $pad;
-	font-weight: normal;
-	line-height: $global-footer-height;
+	background: lightgray;
+	padding: 30px;
 }
 
-.hero {
-	// background-color: rgba(white, 0.7);
-	padding: 30px 0;
-	margin-top: 50px;
-	height: 300px;
 
-	.hero-tagline {
-		font-size: 12pt;
-		line-height: 12pt;
-		text-transform: uppercase;
-		letter-spacing: .3em;
-		vertical-align: middle;
-		font-weight: 700;
-		text-align: center;
-		font-family: $f-oxygen;
-		margin-top: 0;
-		color: $c-value-b;
-	}
 
-	.hero-image {
-		display: block;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 600px;
-	}
+[role="main"] {
+	margin-top: $lineheight;
 }
 
-.logo-large {
-	max-width: 150px;
-	margin: 0 auto;
-}
-
-* + p {
-	margin-top: $margin;
-}
-
-.step {
-	text-align: center;
-	&:before {
-		font-size: 48pt;
-
-	}
-}
-
-.button-green {
-	background-color: $c-green-a;
-	color: #fff;
-	&:hover {
-		background-color: lighten($c-green-a, 5%);
-		box-shadow: 0 0 3px rgba(black, 0.2) inset;
-	}
-}
-
-.heading-large {
-	font-size: 24pt;
-	font-weight: 300;
-	margin-bottom: $unit;
-}
-
-.module {
-	margin-bottom: -1px;
-	background-color: #fff;
-	padding: $pad;
-	border-radius: 2px 2px 0 0;
-	box-shadow: 0 2px 1px rgba(black, 0.3), 0 -1px 1px rgba(black, 0.1);
-	&:last-of-type {
-		border-radius: 0 0 2px 2px;
-	}
-	+ .module {
-		padding-top: $pad;
-		box-shadow: 0 2px 1px rgba(black, 0.3);
-	}
-}
-
-.demo {
-	padding: 1em;
-	background-color: #555;
-	margin-top: 1em;
-	.demo {
-		background-color: #888;
-		margin-top: 0;
+.splash {
+	position: relative;
+	.splash-heading {
+		padding: 2rem;
+		background: rgba(black, 0.6);
+		position: absolute;
 		color: #fff;
+		font-size: 2rem;
+		top: 50%;
+		right: 0;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		box-shadow: 0 0 2px rgba(black, 0.4);
 	}
 }
 
-// Color page
+.nav-style--a {
+	position: relative;
 
-.demo-color {
-	color: #ffffff;
-	text-align: center;
-	.dark {
-		background-color: #2C2C2C;
-		padding: 1em;
-	}
-	.darkgrey {
-		background-color: #595959;
-		padding: 1em;
-	}
-	.lightgrey {
-		background-color: #B0B0B0;
-		padding: 1em;
-	}
-	.white {
-		background-color: #ffffff;
-		color: #262626;
-		padding: 1em;
-		border: 1px #EEE solid;
-	}
-	.primary {
-		background-color: #0076a8;
-		padding: 1em;
-		&.light {
-			background-color: #B9E3F5;
-		}
-		&.dark {
-			background-color: #005274;
-		}
-		&.inverse {
-			color: #000000;
+	> a {
+		display: block;
+		line-height: 3rem;
+		height: 3rem;
+		background: $c-gray;
+		text-align: center;
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		border-left: solid thin darken($c-gray, 10%);
+		&:hover {
+			background: darken($c-gray, 10%);
 		}
 	}
-	.accent {
-		background-color: #00b388;
-		padding: 1em;
-		margin-top: 1em;
+	&:last-of-type {
+		border-right: solid thin darken($c-gray, 10%);
+	}
+}
+
+
+.nav-style--b {
+	position: relative;
+
+	> a {
+		display: block;
+		line-height: 3rem;
+		height: 3rem;
+		background: $c-gray;
+		text-align: center;
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		border-left: solid thin darken($c-gray, 10%);
+
+		&:hover {
+			background: darken($c-gray, 10%);
+		}
+	}
+
+	&:last-of-type {
+		border-right: solid thin darken($c-gray, 10%);
 	}
 }

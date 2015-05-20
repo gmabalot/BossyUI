@@ -1,40 +1,28 @@
 # Site settings
-title: Bossy UI
+title: Your awesome title
+author: Your name
 email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://bossyui.io/#/" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-# github_username:  jekyll
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+disqus_shortname: "demo_site"
+keywords: ["your", "key", "words"]
+pagination: 3
 
 # Build settings
 markdown: kramdown
 
-defaults:
-  -
-    scope:
-      path: "pages"
-      type: "pages"
-    values:
-      parent: ""
-      layout: "page"
-  -
-    scope:
-      path: "pages/components"
-      type: "pages"
-    values:
-      parent: "components"
-      layout: "page"
+# SASS Dir
+sass:
+    sass_dir: assets
 
-  -
-    scope:
-      path: "pages/about"
-      type: "pages"
-    values:
-      parent: "about"
-
-  -
-    scope:
-      path: "_partials"
-      type: "pages"
-    values:
-      parent: ""
+gems:
+- jekyll-mentions
+- jemoji
+- jekyll-redirect-from
+- jekyll-sitemap

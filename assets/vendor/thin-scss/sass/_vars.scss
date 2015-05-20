@@ -1,0 +1,21 @@
+
+// Grid Vars
+$grid-gutter: 1rem !default;
+$grid-columns: 12 !default;
+
+// Break points
+$breakpoint-mobile: 0 !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-desktop: 1025px !default;
+
+// Site Layout
+$site-max-width: $breakpoint-desktop !default;
+$site-header-height: 0 !default;
+$site-footer-height: 150px !default;
+
+// Typography
+$lineheight: 1.5rem;
+
+// Grid Break Points
+$breakpoints: (grid: $breakpoint-mobile, tablet: $breakpoint-tablet, desktop: $breakpoint-desktop) !default;
+$textscale: ($breakpoint-mobile: 130%, $breakpoint-tablet: 120%, $breakpoint-desktop: 87.5%) !default;

@@ -1,0 +1,34 @@
+{
+  "name": "thin",
+  "version": "0.0.7",
+  "homepage": "https://github.com/adrianjonmiller/thin",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "A minimalist CSS framework",
+  "main": "['dist/_thin.scss', 'dist/thin.min.css']",
+  "keywords": [
+    "framework",
+    "sass",
+    "minimalist"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo",
+    "config.codekit"
+  ],
+  "_release": "0.0.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.7",
+    "commit": "d4d76408a97e61aae048ff5e888c0ce0ae6a8c6b"
+  },
+  "_source": "git://github.com/adrianjonmiller/thin.git",
+  "_target": "~0.0.3",
+  "_originalSource": "thin-scss"
+}

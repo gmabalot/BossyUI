@@ -1,0 +1,41 @@
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	padding-bottom: $site-footer-height;
+}
+
+// Footer position
+body > footer {
+	bottom: 0;
+	height: $site-footer-height;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+@if $site-header-height > 0 {
+	body {
+		padding-top: $site-header-height;
+	}
+
+	// Header position
+	body > header {
+		height: $site-header-height;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+[role="dropdown"] {
+	display: none;
+	min-width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}

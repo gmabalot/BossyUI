@@ -1,0 +1,8 @@
+{% if include.image %}
+<div class="splash">
+	<img src="{{ include.image }}" alt="">
+	{% if include.text %}
+		<h1 class="splash-heading">{{ include.text }}</h1>
+	{% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,133 @@
+// Force box-sizing border-box
+* {
+	box-sizing: border-box !important;
+	
+	&:hover > [role="dropdown"] {
+		display: block;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	+ * {
+		margin-top: $lineheight;
+	}
+}
+
+// Reset Font Size to 14px (12pt)
+html, body {
+	margin: 0;
+	padding: 0;
+	line-height: $lineheight;
+}
+
+// Font resets
+html {
+	font-family: "Helvectica", "Arial", sans-serif;
+	height: 100%;
+	font-size: 87.5%;
+}
+
+// Text Styles Reset
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, figure, ul, ol, legend, label,
+input, textarea, keygen, select, button {
+	font-size: 1rem;
+	font-weight: normal;
+  line-height: $lineheight;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	+ h1, + h2, + h3, + h4, + h5, + h6, + p {
+		margin-top: $lineheight;
+	}
+}
+
+// Image display
+img {
+	max-width: 100%;
+	display: block;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+legend {
+  padding: 0;
+  display: table;
+}
+fieldset {
+	padding: 0;
+  border: none;
+  margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+  min-width: 0;
+  &:first-of-type {
+		margin-top: 0;
+	}
+  display: block;
+  + fieldset {
+  	margin-top: $lineheight;
+  }
+}
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+form {
+	@extend %clearfix;
+
+	input {
+		display: inline-block;
+		padding: 0 .5rem;
+		margin: 0;
+
+		&[type="text"], &[type="email"] {
+			width: 100%;
+			display: block;
+			height: 2rem;
+			line-height: 0;
+		}
+	}
+
+	label {
+		margin: 0;
+		display: inline-block;
+		margin-right: .5rem;
+		@extend %clearfix;
+		> input {
+			margin-top: 0;
+		}
+	}
+}
+
+button {
+	margin: 0;
+	+ button {
+		margin-left: .25em;
+	}
+}
+
+// Navigation reset
+nav {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		position: relative;
+		li {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+li {
+	margin-top: 0;
+}

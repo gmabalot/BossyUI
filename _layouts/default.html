@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="bossyui">
+<html ng-app="app">
 
   {% include head.html %}
 
-  <body class="min" >
+  <body>
 
     {% include header.html %}
 
-    <div role="main">
-        {{ content }}
-    </div>
+    <ui-view role="main"></ui-view>
 
     {% include footer.html %}
-
+    {% include js.html %}
   </body>
 
 </html>

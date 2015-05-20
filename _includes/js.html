@@ -1,13 +1,17 @@
 <!-- Vendor -->
-<script type="text/javascript" src="{{ relative }}bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="{{ relative }}bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script type="text/javascript" src="{{ relative }}bower_components/angular-route/angular-route.min.js"></script>
-<script type="text/javascript" src="{{ relative }}bower_components/BossyUI/dist/js/bossy.all.js"></script>
+<script type="text/javascript" src="{{ "/assets/vendor/angular/angular.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/vendor/angular-route/angular-route.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/vendor/angular-ui-router/release/angular-ui-router.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/vendor/angular-utils-pagination/dirPagination.js" | prepend: site.baseurl }}"></script>
 <!-- End Vendor -->
 
-<!-- Application -->
-<script type="text/javascript" src="{{ relative }}js/app.js"></script>
-<script type="text/javascript" src="{{ relative }}js/controllers.js"></script>
-<script type="text/javascript" src="{{ relative }}js/directives.js"></script>
-<script type="text/javascript" src="{{ relative }}js/services.js"></script>
-<!-- End Application -->
+
+<!-- App -->
+<script type="text/javascript" src="{{ "/js/app.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/controllers.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/filters.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/directives.js" | prepend: site.baseurl }}"></script>
+<!-- End App -->
+
+
+{% include posts.html %}

@@ -1,0 +1,19 @@
+{% if include.product %}
+	<div class="grid-3">
+		<div class="col">
+			<img src="{{ product.image }}" alt="{{ product.name }}" class="thumbnail"/>
+			<button class="snipcart-add-item"
+		    data-item-name="{{product.name}}"
+		    data-item-id="{{product.sku}}"
+		    data-item-image="{{product.image}}"
+		    data-item-url="{{include.url}}"
+		    data-item-price="{{product.price}}">
+		    Buy it for ${{product.price}}
+		  </button>
+		</div>
+		<div class="col col-2">
+			{{ product.name }}
+		  {{ product.description }}
+		</div>
+	</div>
+{% endif %}
