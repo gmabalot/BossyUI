@@ -15,7 +15,7 @@ var app = angular.module( 'app', [
 
 	// route to show our basic form (/form)
 	.state('page',{
-		url: '/{path}',
+		url: '/*path',
 		controller: 'homeCtrl',
 		templateUrl: function ($stateParams){
 			if($stateParams.path) {

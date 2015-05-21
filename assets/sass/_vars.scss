@@ -1,10 +1,50 @@
 $breakpoint-desktop: 960px;
 $site-header-height: 3rem;
 
-$lineheight: 1.5em;
+$unit: 1.4em !default;
 
-$c-gray: #819498;
-$c-purpleGray: #827B99;
-$c-purple: #383252;
-$c-purpleGray2: #6F6F8C;
-$c-lightGray: #A2B4BB;
+$pad: $unit !default;
+$margin: $unit !default;
+
+$global-footer-height: $unit !default;
+$module-header-height: $unit !default;
+$site-footer-height: 40px;
+$max-width: 1024px !default;
+$section-margin: $margin !default;
+
+$bg: lightgray;
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Oxygen+Mono|Oxygen:400,300,700);
+
+// Colors
+$c-blue-a: #0076a8;
+$c-green-a: #00b388;
+$c-value-a: #595959;
+$c-value-b: #979595;
+
+$f-lato       : 'Lato', sans-serif;
+$f-oxygenMono : 'Oxygen Mono', courier;
+$f-oxygen     : 'Oxygen', sans-serif;
+
+$t-size: 12pt;
+$t-leading: 1.5em;
+
+$unit: 20px;
+
+$pad: $unit;
+$margin: $unit;
+$section-margin: 50px;
+
+$global-footer-height: 20px;
+$module-header-height: $unit;
+
+$max-width: 840px;
+$gutter: 1rem;
+
+$badge: 100px;
+$badge-font-color: #fff;
+
+$badge-color: $c-green-a;
+
