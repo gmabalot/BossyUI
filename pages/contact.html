@@ -13,15 +13,15 @@ order: 4
 		<form method="POST" action="//formspree.io/{{site.email}}">
 			<fieldset>
 				<legend>Name</legend>
-				<input type="text">
+				<input type="text" name="name">
 			</fieldset>
 			<fieldset>
 			<legend>Email Address</legend>
-			<input type="text">
+			<input type="text" name="_replyto">
 			</fieldset>
 			<fieldset>
 			<label for="">Message</label>
-			<textarea name="" id="" rows="10" style="width: 100%"></textarea>
+			<textarea name="" id="" rows="10" style="width: 100%" name="message"></textarea>
 			</fieldset>
 			<input type="submit" value="Submit">
 		</form>
