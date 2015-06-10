@@ -5,7 +5,7 @@ email: we.are@bossyui.io
 description: > # this means to ignore newlines until "baseurl:"
   Bossy UI is an opinionated set of Angular Directives
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://bossyui.io/" # the base hostname & protocol for your site
+url: "http://www.bossyui.io/" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 # github_username:  jekyll
 # disqus_shortname: "demo_site"
