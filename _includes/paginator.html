@@ -13,12 +13,16 @@
       {% assign length = forloop.length%}
     {% endfor %}
   </ul>
-  <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
   <ul class="unstyle">
+    <li>
+      <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
+    </li>
     <li ng-repeat="page in pageIndex({{group}})" class="col">
       <button ng-class="{'is-current': current == page}" ng-click="pageTo(page)">[[page]]</button>
     </li>
+    <li>
+      <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
+    </li>
   </ul>
-  <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
   <script ng-init="pagination = {{site.pagination}}; length = {{length}}; pageMax = {{group}}"></script>
 </ja-paginator>

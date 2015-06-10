@@ -4,7 +4,8 @@ var app = angular.module( 'app', [
 	'app.controllers',
 	'app.filters',
 	'app.directives',
-	'angularUtils.directives.dirPagination'
+	'angularUtils.directives.dirPagination',
+	'bossy'
 	], function($interpolateProvider) {
 	  $interpolateProvider.startSymbol('[[');
 	  $interpolateProvider.endSymbol(']]');

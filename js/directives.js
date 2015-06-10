@@ -7,10 +7,11 @@ angular.module('app.directives', [])
 		}
 	})
 
-	.directive('bossySvg', function($state, $rootScope, $http){
-    return {
-      templateUrl: function(elem, attr){
-        return attr.src;
-      }
-    }
-  });
+	.directive('bossySvg', function(){
+		return {
+			restrict: 'AEC',
+			templateUrl: function(elem, attr) {
+				return attr.src;
+			}
+		}
+	});

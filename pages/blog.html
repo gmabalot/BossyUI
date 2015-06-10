@@ -6,7 +6,7 @@ order: 3
 ---
 
 <ja-paginator>
-  <ul class="unstyle grid-2 rows">
+  <ul class="unstyle grid-1 rows">
     {% assign group = 1 %}
     {% assign page = site.pagination %}
     {% for post in site.posts %}
@@ -15,18 +15,22 @@ order: 3
         {% assign page = page | plus: site.pagination %}
       {% endif %}
       <li class="col" ng-show="current == {{group}}">
-        <a ui-sref="page({path: '{{post.url}}' })">{{post.title}}</a>
+        <h2 class="heading--l"><a ui-sref="page({path: '{{post.url}}' })">{{post.title}}</a></h2>
   			<p>{{post.excerpt}}</p>
       </li>
       {% assign length = forloop.length%}
     {% endfor %}
   </ul>
-  <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
-  <ul class="unstyle">
-    <li ng-repeat="page in pageIndex({{group}})" class="col">
+  <ul class="unstyle inline-list">
+    <li>
+      <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
+    </li>
+    <li ng-repeat="page in pageIndex({{group}})">
       <button ng-class="{'is-current': current == page}" ng-click="pageTo(page)">[[page]]</button>
     </li>
+    <li>
+      <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
+    </li>
   </ul>
-  <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
   <script ng-init="pagination = {{site.pagination}}; length = {{length}}; pageMax = {{group}}"></script>
 </ja-paginator>
