@@ -1,6 +1,7 @@
 {
   "name": "BossyUI",
   "description": "An opinionated set of angular directives",
+  "version": "0.0.1",
   "main": [
     "dist/js/bossy.all.js",
     "dist/js/bossy.css"
@@ -22,10 +23,10 @@
     "angular-resource": "1.3.x",
     "angular-animate": "1.3.x"
   },
-  "_release": "a621aa7a88",
+  "_release": "0.0.1",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
+    "type": "version",
+    "tag": "0.0.1",
     "commit": "a621aa7a883b46591039194090ef329441c65d5e"
   },
   "_source": "git@github.com:buildcom/BossyUI.git",
