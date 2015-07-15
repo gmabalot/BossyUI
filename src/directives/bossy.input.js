@@ -40,19 +40,19 @@
                 title: 'title'
             };
 
-            $scope.config = angular.extend({}, config, $scope.config);            
+            $scope.config = angular.extend({}, config, $scope.config);
         }
 
         return {
             restrict: 'E',
-            replace: true,
+            replace: false,
             scope: {
                 config: '='
             },
             link: function(scope, element, attrs) {
                 element.html(getTemplate(scope.config.templateType));
                 $compile(element.contents())(scope);
-                
+
                 scope.$watch(function($scope) {
                     return $scope.config.value;
                 }, function(newVal, oldVal) {

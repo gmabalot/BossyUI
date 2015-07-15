@@ -1,0 +1,25 @@
+bossy-input {
+	.bossy-fieldset {
+		// background-color: blue;
+	}
+
+	.bossy-input-prefix, .bossy-input-postfix {
+		color: #fff;
+		background-color: $c-primary;
+		padding: 0 1rem;
+	}
+
+	.bossy-input-prefix {
+		border-radius: 3px 0 0 3px;
+	}
+
+	.bossy-input-postfix {
+		border-radius: 0 3px 3px 0;
+	}
+
+	.bossy-input {
+		input {
+			border-radius: 0;
+		}
+	}
+}

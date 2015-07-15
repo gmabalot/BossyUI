@@ -2,9 +2,9 @@
 <html lang="en" ng-app="SandboxApp">
 <head>
     <title>BossyUI Sandbox</title>
+    <link href="lib/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bossy.css" rel="stylesheet">
     <link href="css/sandbox.css" rel="stylesheet">
-    <link href="lib/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="lib/bower/angular/angular.min.js"></script>
     <script src="lib/bower/ui-router/release/angular-ui-router.min.js"></script>
 </head>
@@ -36,7 +36,9 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Results</h3>
                 </div>
-                <ui-view></ui-view>
+                <div class="panel-body">
+                    <ui-view></ui-view>
+                </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">

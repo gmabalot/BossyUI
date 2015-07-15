@@ -1,0 +1,52 @@
+bossy-input {
+	display: block;
+
+	+ bossy-input {
+		margin-top: 1rem;
+	}
+
+	fieldset {
+		padding: 0;
+		margin: 0;
+
+		legend {
+			border: none;
+			display: block;
+			font-size: 1rem;
+			line-height: 2rem;
+			margin: 0;
+			padding: 0;
+		}
+
+		input {
+			border: solid thin lightgray;
+			border-radius: 2px;
+			display: inline-block;
+			font-size: 1rem;
+			height: 3rem;
+			margin: 0;
+			padding: 0;
+			padding: 0 .5em;
+		}
+	}
+
+	.bossy-input {
+		display: flex;
+
+		input {
+			flex: 2;
+		}
+
+		span {
+			line-height: 3rem;
+		}
+
+		.bossy-input-prefix {
+			 order: -1;
+		}
+
+		.bossy-input-postfix {
+			 order: 99;
+		}
+	}
+}
