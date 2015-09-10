@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Blog
-permalink: blog/
 order: 3
 ---
 
 <ja-paginator>
-  <ul class="unstyle grid-1 rows">
+  <ul class="grid unstyle">
     {% assign group = 1 %}
     {% assign page = site.pagination %}
     {% for post in site.posts %}
@@ -14,23 +13,17 @@ order: 3
         {% assign group = group | plus: 1 %}
         {% assign page = page | plus: site.pagination %}
       {% endif %}
-      <li class="col" ng-show="current == {{group}}">
+      <li ng-show="current == {{group}}">
         <h2 class="heading--l"><a ui-sref="page({path: '{{post.url}}' })">{{post.title}}</a></h2>
   			<p>{{post.excerpt}}</p>
       </li>
       {% assign length = forloop.length%}
     {% endfor %}
   </ul>
-  <ul class="unstyle inline-list">
-    <li>
+  <div class="group">
       <button ng-click="prevPage()" ng-disabled="prevDisabled">Previous</button>
-    </li>
-    <li ng-repeat="page in pageIndex({{group}})">
-      <button ng-class="{'is-current': current == page}" ng-click="pageTo(page)">[[page]]</button>
-    </li>
-    <li>
+      <button ng-repeat="page in pageIndex({{group}})" ng-class="{'is-current': current == page}" ng-click="pageTo(page)">[[page]]</button>
       <button ng-click="nextPage()" ng-disabled="nextDisabled">Next</button>
-    </li>
-  </ul>
+  </div>
   <script ng-init="pagination = {{site.pagination}}; length = {{length}}; pageMax = {{group}}"></script>
 </ja-paginator>

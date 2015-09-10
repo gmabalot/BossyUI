@@ -1,15 +1,28 @@
 ---
 ---
 @charset "UTF-8";
-@import "sass/bourbon/bourbon";
+
+$breakpoint-desktop: 960px;
+$site-header-height: 3rem;
+
+$unit: 1.4em !default;
+
+$pad: $unit !default;
+$margin: $unit !default;
+
+$global-footer-height: $unit !default;
+$module-header-height: $unit !default;
+$site-footer-height: 60px;
+$max-width: 1024px !default;
+$section-margin: $margin !default;
+
+$bg: lightgray;
+
+@import "sass/vendor";
+@import "sass/utilities/mixins";
+@import "sass/utilities/extends";
 @import "sass/vars";
-@import "vendor/thin-scss/dist/thin";
+@import "sass/base";
 @import "sass/typography";
 @import "sass/theme";
-
-@import "sass/syntax-highlighting";
-
-
-.is-current {
-	background: blue;
-}
+@import "sass/styles";

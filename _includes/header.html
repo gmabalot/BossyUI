@@ -1,37 +1,37 @@
 <header id="header">
   <div class="container">
-    <div class="grid-4">
-      <div class="col col-1">
+    <div class="grid">
+      <div class="col-1-4">
         <div ui-sref-active="active">
           <a class="heading--m" href="{{ site.baseurl }}/#/"><bossy-svg data-src="assets/img/logo_horizontal.svg" class="nav-logo"></a>
         </div>
       </div>
-      <div class="col col-3">
-        <nav class="table">
-          <ul class="table-row">
+      <div class="col-3-4">
+        <nav>
+          <ul class="grid">
           {% assign nodes = site.pages | sort: "order" %}
           {% for node in nodes %}
             {% if node.title != nil and node.url != '/' and node.parent == nil and node.order > 0 %}
             {% capture nodediff %}{{ node.url | remove:"/" }}{% endcapture %}
-            <li ui-sref-active="active" class="table-col nav-style--a">
+            <li ui-sref-active="active" class="nav-style--a">
               {% if node.order == 0 %}
-              <a ui-sref="page">{{ node.title }}</a>
+              <a ui-sref="/">{{ node.title }}</a>
               {% else %}
-              <a ui-sref="page({path: '{{node.url | remove:'/'}}' })">{{ node.title }}</a>
+              <a ui-sref="{{node.title | slugify}}">{{ node.title }}</a>
               {% endif %}
-              {% assign children = site.pages | where:  "parent", nodediff %}
-              {% if children %}
+              {% assign children = site.pages | where:  "parent", node.title %}
+              {% if children != empty %}
               <ul role="dropdown">
               {% for child in children %}
                 <li ui-sref-active="active" class="nav-style--b">
-                  <a ui-sref="page({path: '{{node.url | remove:'/'}}/{{child.url | remove_first: node.url | remove:'/' }}'})">{{ child.title }}</a>
+                  <a ui-sref="{{child.title | slugify}}">{{ child.title }}</a>
                 </li>
               {% endfor %}
               </ul>
               {% endif %}
             </li>
             {% endif %}
-          {% endfor %}
+            {% endfor %}
           </ul>
         </nav>
       </div>

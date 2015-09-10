@@ -7,8 +7,50 @@
 <!-- End Vendor -->
 
 
+{% capture pages %}
+	[
+		{% for page in site.pages %}
+			{% if page.title %}
+				{
+				"name"             : "{{ page.title | slugify}}",
+				"url"							 : "{% if page.parent %}/{{ page.parent | slugify }}{% endif %}/{{ page.title | slugify }}",
+				"templateUrl"      : "{{ page.url }}"
+				} {% if forloop.last %}{% else %},{% endif %}
+			{% endif %}
+		{% endfor %}
+	]
+{% endcapture %}
+
+<script type="text/javascript">
+	var pages = {{ pages | strip_newlines }};
+	var app = angular.module( 'app', [
+		'ngRoute',
+		'ui.router',
+		'app.controllers',
+		'app.filters',
+		'app.directives',
+		'angularUtils.directives.dirPagination',
+		'bossy'
+		], function($interpolateProvider) {
+		  $interpolateProvider.startSymbol('[[');
+		  $interpolateProvider.endSymbol(']]');
+	})
+	.config(function($stateProvider, $urlRouterProvider) {
+		$stateProvider.state('home', {
+	    url: "/",
+	    templateUrl: "pages/index.html"
+	  });
+		$urlRouterProvider.otherwise('/');
+		pages.forEach(function (item) {
+			console.log(item);
+		  $stateProvider.state(item);
+		});
+	});
+</script>
+
+
 <!-- App -->
-<script type="text/javascript" src="{{ "js/app.js" | prepend: site.baseurl }}"></script>
+<!-- <script type="text/javascript" src="{{ "js/app.js" | prepend: site.baseurl }}"></script> -->
 <script type="text/javascript" src="{{ "js/controllers.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "js/filters.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "js/directives.js" | prepend: site.baseurl }}"></script>

@@ -7,10 +7,18 @@ ja-paginator {
 	display: block;
 }
 
+nav {
+	ul {
+		@extend %unstyle-list;
+	}
+}
+
 .nav-style--a {
 	position: relative;
+	margin-left: 0;
 
 	> a {
+		padding: 0 1rem;
 		text-shadow: 0 -1px rgba(black, 0.6);
 		color: #eee;
 		font-size: 10pt;
@@ -39,7 +47,7 @@ ja-paginator {
 
 	&.active > a, > a:hover {
 		color: #fff;
-		@include background(linear-gradient(to top, $c-blue-a, darken($c-blue-a, 3)));
+		@include background(linear-gradient(to top, $color-a, darken($color-a, 3)));
 	}
 	&.active > a {
 		box-shadow: 0 4px 6px rgba(black, 0.05) inset;
@@ -83,13 +91,13 @@ ja-paginator {
 		height: 40px;
 		line-height: 40px;
 		background-color: #fff;
-		color: $c-value-b;
+		color: $color-b--dark;
 		display: block;
 		padding: 0 $pad;
 	}
 
 	&.active > a, > a:hover {
-		background-color: $c-green-a;
+		background-color: $color-b;
 		color: #fff;
 	}
 }
@@ -117,11 +125,11 @@ button, [role="button"] {
 
 
 .logo-mark {
-	fill: $c-blue-a;
+	fill: $color-a;
 }
 
 #bossy_logo_mark {
-	background-color: $c-green-a;
+	background-color: $color-b;
 }
 
 // a, a:visited {
@@ -150,7 +158,7 @@ button, [role="button"] {
 }
 
 #header {
-	@include background(linear-gradient(to top, $c-blue-a, lighten($c-blue-a, 2)));
+	@include background(linear-gradient(to top, $color-a, lighten($color-a, 2)));
 	box-shadow: 0 1px 2px rgba(black, 0);
 	left: 0;
 	top: 0;
@@ -173,10 +181,10 @@ button, [role="button"] {
 
 
 .button-green {
-	background-color: $c-green-a;
+	background-color: $color-b;
 	color: #fff;
 	&:hover {
-		background-color: lighten($c-green-a, 5%);
+		background-color: lighten($color-b, 5%);
 		box-shadow: 0 0 3px rgba(black, 0.2) inset;
 	}
 }
@@ -193,17 +201,6 @@ button, [role="button"] {
 	+ .module {
 		padding-top: $pad;
 		box-shadow: 0 2px 1px rgba(black, 0.3);
-	}
-}
-
-.demo {
-	padding: 1em;
-	background-color: #555;
-	margin-top: 1em;
-	.demo {
-		background-color: #888;
-		margin-top: 0;
-		color: #fff;
 	}
 }
 
@@ -268,21 +265,3 @@ button, [role="button"] {
 textarea {
 	margin-top: 0;
 }
-
-
-
-// button, [role="button"] {
-// 	background: transparent;
-// 	border: none;
-// 	height: 40px;
-// 	line-height: 40px;
-// 	border-radius: 3px;
-// 	padding: 0 $pad;
-// 	color: inherit;
-// 	text-decoration: none;
-// 	background: lightgray;
-// 	display: inline-block;
-// 	&:hover {
-// 		cursor: pointer;
-// 	}
-// }
