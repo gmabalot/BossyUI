@@ -1,0 +1,79 @@
+
+// Media Queries
+@mixin media($media) {
+  @media (min-width: #{$media}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+
+// Grid
+@mixin grid-generator($list) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+
+  > * {
+    margin-top: 0;
+    margin-left: 1rem;
+    flex: 0 1 auto
+  }
+
+  @each $name, $break in $list {
+    @include media($break) {
+      [class*="#{$name}"] {
+        width: 100%;
+      }
+    }
+    @for $i from 1 through $columns {
+      @for $j from 1 through $i {
+        @if $j < $i {
+          @include media($break) {
+            .#{$name}-#{$j}-#{$i} {
+              max-width: percentage($j/$i);
+              max-width: calc(#{percentage($j/$i)} - 1rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Interaction
+@mixin hover($background) {
+  &:hover {
+    background-color: darken($background, 5%);
+    cursor: pointer;
+  }
+}
