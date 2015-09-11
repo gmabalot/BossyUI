@@ -3,53 +3,57 @@ layout: page
 title: Styles
 order: 5
 ---
-<div class="container grid">
-  <div>
-    .tile
-    <section class="tile demo">
-    </section>
+<div class="container">
+  <div class="grid">
+    <div class="col-1">
+      <h2 class="heading--l">Tiles</h2>
+    </div>
+    <div class="col-1-3">
+      <section class="tile demo">
+      </section>
+    </div>
+    <div class="col-2-3">
+      <h3>Tiles</h3>
+      <p>
+        Tiles are structural elements, visual building blocks for contained elements on the page. Tiles should be used when a piece of information needs to visually separate from others around it.
+      </p>
+    </div>
   </div>
-  <div>
-    .tile
-    <section class="tile demo"></section>
-    <section class="tile--stacked demo">
-      <header class="bar">
-        <span>This is an long long title</span>
+  <div class="grid">
+    <div class="col-1-3">
+      <section class="tile--stacked demo">
+      </section>
+      <section class="tile--stacked demo">
+      </section>
+    </div>
+    <div class="col-2-3">
+      <h3>Stacked Tiles</h3>
+      <p>
+        Tiles can also be stacked together. Instead of <code>.tile</code> use <code>.tiles--stacked</code> and the negative space between the tile elements will collapse.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-1-3">
+      <div class="bar">
+        <span>Bar Default</span>
         <button class="bar-button">&#10005</button>
-      </header>
-    </section>
-    <section class="tile--stacked demo">
-      .tile.flush
-    </section>
+      </div>
 
-  </div>
-  <div>
-    .bar
-    <div class="bar">
-      <span>Bar Default</span>
-      <button class="bar-button">&#10005</button>
+      <div class="bar--primary">
+        <span>Bar Primary</span>
+        <button class="bar-button">&#10005</button>
+      </div>
+
+      <div class="bar--secondary">
+        <span>Bar Secondary</span>
+        <button class="bar-button">&#10005</button>
+      </div>
     </div>
-
-    <div class="bar primary">
-      <span>Bar Primary</span>
-      <button class="bar-button">&#10005</button>
-    </div>
-
-    <div class="bar secondary">
-      <span>Bar Secondary</span>
-      <button class="bar-button">&#10005</button>
+    <div class="col-2-3">
+      <h3>Bars</h3>
+      <p>Bars are a visual container for specific content. They can be used as headers, footers or interactive elements. Their primary purpose is to provide a visual labeling mechanism and a single interactive button.</p>
     </div>
   </div>
-</div>
-
-<div class="flex">
-<div>
-  <button>This is a button</button>
-</div>
-<div class="group">
-  <button>This is a button</button>
-  <button>This is a button</button>
-  <button>This is a button</button>
-  <button>This is a button</button>
-</div>
 </div>

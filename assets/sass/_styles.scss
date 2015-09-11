@@ -5,8 +5,9 @@
 
 // Button Styles
 button {
-  $background: $color-a;
   @include hover($color-a);
+  @extend %web-kit-unstyle;
+
   border: none;
   border-radius: 0;
   display: inline-block;
@@ -50,9 +51,14 @@ button {
       border-radius: 0 $radius $radius 0;
     }
   }
+
+  > .tile {
+
+  }
 }
 
-// Tile Styles
+/* ----------- Tiles ----------- */
+/* Single Tile */
 .tile {
   background: #FFFFFF;
   box-shadow: $shadow-left, $shadow-right, $shadow-top, $shadow-bottom;
@@ -63,14 +69,15 @@ button {
   }
 }
 
+/* Stacked Tile */
 .tile--stacked {
-    @extend .tile;
-    border-radius: 0;
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
-    padding-bottom: 3px;
+  @extend .tile;
+  border-radius: 0;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  padding-bottom: 3px;
 
-    > header {
+  > header {
       border-radius: 0;
   }
 
@@ -83,7 +90,8 @@ button {
   }
 }
 
-// Bar
+/* ----------- Bars ----------- */
+/* Generic Bar */
 .bar {
   min-height: 2rem;
   line-height: 2rem;
@@ -113,24 +121,29 @@ button {
 
     @include hover($color-c--dark);
   }
+}
 
-  &.primary {
-    background-color: $color-a;
-    color: #fff;
+/* Primary Color Bar */
+.bar--primary {
+  @extend .bar;
+  background-color: $color-a;
+  color: #fff;
 
-    .bar-button {
-      background-color: $color-a--dark;
-      @include hover($color-a--dark);
-    }
-  }
-
-  &.secondary {
-    background-color: $color-b;
-    color: #fff;
-
-    .bar-button {
-      background-color: $color-b--dark;
-      @include hover($color-b--dark);
-    }
+  .bar-button {
+    background-color: $color-a--dark;
+    @include hover($color-a--dark);
   }
 }
+
+/* Secondary Color Bar */
+.bar--secondary {
+  @extend .bar;
+  background-color: $color-b;
+  color: #fff;
+
+  .bar-button {
+    background-color: $color-b--dark;
+    @include hover($color-b--dark);
+  }
+}
+
