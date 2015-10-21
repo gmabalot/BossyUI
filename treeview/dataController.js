@@ -1,12 +1,12 @@
 var arr = { "nodes": [
-							{ "node": { 
+							{ "node": {
 								"value": "usr",
 								"icons": [
 									{"expand": "expand-class-name"},
 									{"collapse": "collapse-class-name"}
 								],
 								"nodes": [
-									{ "node": { 
+									{ "node": {
 										"value": "bin",
 										"icons": [
 											{"expand": "expand-class-name"},
@@ -17,7 +17,7 @@ var arr = { "nodes": [
 											{ "item": { "value": "filename2.txt"}}
 										]
 									}},
-									{ "node": { 
+									{ "node": {
 										"value": "lib",
 										"icons": [
 											{"expand": "expand-class-name"},
@@ -29,8 +29,8 @@ var arr = { "nodes": [
 									 {"item": { "value": "filename4.txt"}}
 								]}
 							}]};
-							    console.log(arr);
-						    
+							    //console.log(arr);
+
 angular.module('bossy.treeview',[])
 .controller('DataController', ['$scope', function($scope){
 	$scope.treeInput = arr;
