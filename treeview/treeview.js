@@ -1,4 +1,5 @@
 function TreeviewController($scope) {
+    console.log($scope.treeData);
     TreeviewScan($scope.treeData["nodes"], 0);
     //$scope.clickable = true;
     $scope.clicked = false;
@@ -22,19 +23,23 @@ function TreeviewController($scope) {
 } //end TreeviewController
 
 function TreeviewScan(obj, total){
-  var key = "nodes";
   var t_obj;
 
   if(obj instanceof Object){
     for(t_obj in obj){
-      if(obj.hasOwnProperty(key)){
-        console.log("Scanning object " + t_obj);
-        TreeviewScan(obj[t_obj], total++);
-      }
+      /* if object is a node */
+      if(obj[t_obj].hasOwnProperty("node")){
+        console.log(obj[t_obj]["node"]["value"]);
+        /* if node contains sub-node */
+        if(obj[t_obj]["node"].hasOwnProperty("nodes"))
+          TreeviewScan(obj[t_obj]["node"]["nodes"], total++); // recursively scan inner node
+        /* if object is an item */
+      } else if(obj[t_obj].hasOwnProperty("item"))
+          console.log(obj[t_obj]["item"]["value"]);
     }
   }
 
-  console.log("Total Levels: " + total);
+  return total;
 }
 
 function Treeview() {
